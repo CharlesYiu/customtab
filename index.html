@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untitled</title>
+    <script>
+        
+    </script>
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+            -webkit-user-select: none; /* Safari */
+            -khtml-user-select: none; /* Konqueror HTML */
+            -ms-user-select: none;
+            user-select: none;
+        }
+        body {
+            margin: unset;
+        }
+        h1 {
+            position: fixed;
+            left: 2.5%;
+            font-size: 50px;
+        }
+        h2 {
+            position: relative;
+            left: 2.5%;
+            font-size: 35px;
+        }
+        div {
+            position: absolute;
+            width: 95%;
+            height: 100%;
+            left: 2.5%;
+            top: 100px;
+            padding-bottom: 2.5%;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            background-color: rgb(226, 226, 226);
+        }
+        input {
+            position: relative;
+            left: 2.5%;
+            width: 94.375%;
+            height: 30px;
+
+            border-style: none;
+            border-radius: 10px;
+            background-color: white;
+            font-size: 20px;
+        }
+        #title {
+            width: calc(94.5% - 10px);
+            padding-left: 10px;
+
+            cursor: text;
+            -moz-appearance: textfield;
+
+            -webkit-user-select: auto; /* Safari */
+            -khtml-user-select: auto; /* Konqueror HTML */
+            -ms-user-select: auto;
+            user-select: auto;
+        }
+        #color {
+            cursor: pointer;
+            width: 95%;
+            height: 32.5px;
+
+            -webkit-appearance: none;
+        }
+        #color::-moz-color-swatch, #color::-webkit-color-swatc {
+            border: none;
+            border-radius: 7.5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Folder Configuration</h1>
+    <div>
+        <h2>Title</h2>
+        <input type="text" id="title" placeholder="Untitled">
+        <h2>Icon Color</h2>
+        <input type="color" id="color">
+    </div>
+    <script>
+        function setFavicon(hex) {
+            const canvas = document.createElement("canvas")
+            canvas.width = 16
+            canvas.height = 16
+            const context = canvas.getContext("2d")
+            context.fillStyle = hex
+            context.fillRect(0, 0, 16, 16)
+
+            const link = document.createElement("link")
+            link.rel = 'shortcut icon'
+            link.href = canvas.toDataURL()
+            document.head.appendChild(link)
+        }
+
+        const titleInput = document.getElementById("title")
+        const colorInput = document.getElementById("color")
+
+        const searchParams = new URLSearchParams(window.location.search)
+        if (title = searchParams.get("title")) {
+            document.title = title
+            titleInput.value = title
+        }
+        if (hex = searchParams.get("color")) {
+            setFavicon("#"+hex)
+            colorInput.value = "#"+hex
+        }
+        else setFavicon("#000000")
+
+        titleInput.onblur = function() {
+            if (titleInput.value === "" || titleInput.value === "Untitled") searchParams.delete("title")
+            else searchParams.set("title", titleInput.value)
+            window.location.search = searchParams.toString()
+        }
+        colorInput.onblur = function() {
+            if (colorInput.value === "#000000") searchParams.delete("color")
+            else searchParams.set("color", colorInput.value.substring(1, colorInput.value.length))
+            window.location.search = searchParams.toString()
+        }
+    </script>
+</body>
+</html>
