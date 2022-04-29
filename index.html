@@ -11,39 +11,40 @@
     <style>
         * {
             font-family: Arial, Helvetica, sans-serif;
-            -webkit-user-select: none; /* Safari */
-            -khtml-user-select: none; /* Konqueror HTML */
+            -webkit-user-select: none;
+            -khtml-user-select: none;
             -ms-user-select: none;
             user-select: none;
         }
         body {
             margin: unset;
+            overflow-y: hidden;
         }
         h1 {
             position: fixed;
-            left: 2.5%;
+            left: 25px;
             font-size: 50px;
         }
         h2 {
             position: relative;
-            left: 2.5%;
+            left: 25px;
             font-size: 35px;
         }
         div {
             position: absolute;
-            width: 95%;
+            width: calc(100% - 50px);
             height: 100%;
-            left: 2.5%;
+            left: 25px;
             top: 100px;
-            padding-bottom: 2.5%;
+            padding-bottom: 25px;
             border-top-left-radius: 10px;
             border-top-right-radius: 10px;
             background-color: rgb(226, 226, 226);
         }
         input {
             position: relative;
-            left: 2.5%;
-            width: 94.375%;
+            left: 25px;
+            width: calc(100% - 62.5px);
             height: 30px;
 
             border-style: none;
@@ -52,20 +53,19 @@
             font-size: 20px;
         }
         #title {
-            width: calc(94.5% - 10px);
             padding-left: 10px;
 
             cursor: text;
             -moz-appearance: textfield;
 
-            -webkit-user-select: auto; /* Safari */
-            -khtml-user-select: auto; /* Konqueror HTML */
+            -webkit-user-select: auto;
+            -khtml-user-select: auto;
             -ms-user-select: auto;
             user-select: auto;
         }
         #color {
             cursor: pointer;
-            width: 95%;
+            width: calc(100% - 50px);
             height: 32.5px;
 
             -webkit-appearance: none;
@@ -74,10 +74,26 @@
             border: none;
             border-radius: 7.5px;
         }
+        @media (max-width: 500px) {
+            h1 { font-size: 30px; }
+            h2 { font-size: 25px; }
+            div { top: 62.5px; }
+            input { font-size: 15px; }
+            @media (max-height: 287.5px) {
+                body { overflow-y: auto; }
+                div { height: min-content; }
+            }
+        }
+        @media (min-width: 501px) {
+            @media (max-height: 387.5px) {
+                body { overflow-y: auto; }
+                div { height: min-content; }
+            }
+        }
     </style>
 </head>
 <body>
-    <h1>Folder Configuration</h1>
+    <h1>Tab Settings</h1>
     <div>
         <h2>Title</h2>
         <input type="text" id="title" placeholder="Untitled">
