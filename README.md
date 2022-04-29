@@ -1,4 +1,4 @@
-# Folder
+# [Custom Tab](https://customtab.pages.dev)
 ## Purpose
 I made this simple html page because I wanted customizable title and favicon color tabs for use as folders/labels in [TST](https://addons.mozilla.org/en-US/firefox/addon/tree-style-tab/)
 ## How to use
