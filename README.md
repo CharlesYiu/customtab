@@ -4,13 +4,13 @@ I made this simple html page because I wanted customizable title and favicon col
 ## How to use
 Simply change the title and color and they will automatically update (I only tested it on [firefox](https://www.mozilla.org/firefox/))
 ### Step 1: Go to this [page](https://customtab.pages.dev)
-![goto.gif](https://github.com/charlesyiu/customtab/tree/main/goto.gif)
+![goto.gif](https://raw.githubusercontent.com/charlesyiu/customtab/main/goto.gif)
 ### Step 2: Set title (optional)
-![title.gif](https://github.com/charlesyiu/customtab/tree/main/title.gif)
+![title.gif](https://raw.githubusercontent.com/charlesyiu/customtab/main/title.gif)
 ### Step 3: Set color (optional)
-![color.gif](https://github.com/charlesyiu/customtab/tree/main/color.gif)
+![color.gif](https://raw.githubusercontent.com/charlesyiu/customtab/main/color.gif)
 ### Step 4: Use it as a folder (optional)
-![use.gif](https://github.com/charlesyiu/customtab/tree/main/use.gif)
+![use.gif](https://raw.githubusercontent.com/charlesyiu/customtab/main/use.gif)
 ### Video
 ## URL
 The URL is formated like this: `https://customtab.pages.dev/?title=folder&color=fffffff`
