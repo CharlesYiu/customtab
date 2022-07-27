@@ -1,9 +1,9 @@
-# [Custom Tab](https://customtab.pages.dev)
+# [Custom Tab](https://tab.yiu.ch)
 ## Purpose
 I made this simple html page because I wanted customizable title and favicon color tabs for use as folders/labels in [TST](https://addons.mozilla.org/en-US/firefox/addon/tree-style-tab/)
 ## How to use
 Simply change the title and color and they will automatically update (I only tested it on [firefox](https://www.mozilla.org/firefox/))
-### Step 1: Go to this [page](https://customtab.pages.dev)
+### Step 1: Go to this [page](https://tab.yiu.ch)
 ![goto.gif](https://raw.githubusercontent.com/charlesyiu/customtab/main/goto.gif)
 ### Step 2: Set title (optional)
 ![title.gif](https://raw.githubusercontent.com/charlesyiu/customtab/main/title.gif)
